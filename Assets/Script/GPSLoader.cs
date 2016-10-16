@@ -61,7 +61,7 @@ public class GPSLoader : MonoBehaviour {
 			#endif
 
 			if (drawer != null) {
-				drawer.Geo = new GeoCalculator (latitude, longitude);
+				drawer.Geo = new GeoLocation (latitude, longitude);
 			}
 		}
 

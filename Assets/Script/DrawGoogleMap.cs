@@ -8,18 +8,18 @@ public class DrawGoogleMap : MonoBehaviour {
 	public float initLongitude = -73.998672f;
 	public string key = null;
 
-	GeoCalculator calculator;
+	GeoLocation calculator;
 
 	string Url = @"https://maps.googleapis.com/maps/api/staticmap?size=500x500&maptype=terrain&center=40.714728,-73.998672&zoom=17&sensor=false";
 
 	void Start(){
 		if (calculator == null) {
-			calculator = new GeoCalculator (initLatitude, initLongitude);
+			calculator = new GeoLocation (initLatitude, initLongitude);
 			Build ();
 		}
 	}
 
-	public GeoCalculator Geo {
+	public GeoLocation Geo {
 		get {
 			return calculator;
 		}
@@ -29,12 +29,12 @@ public class DrawGoogleMap : MonoBehaviour {
 		}
 	}
 
-	public void SetGeo(GeoCalculator geo){
+	public void SetGeo(GeoLocation geo){
 		Geo = geo;
 	}
 
 	// Use this for initialization
-	public void Draw (GeoCalculator calc) {
+	public void Draw (GeoLocation calc) {
 		calculator = calc;
 		Build ();
 	}
